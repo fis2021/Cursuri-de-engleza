@@ -1,42 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" prefHeight="400" prefWidth="600"
+          vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal"
+          fx:controller="controllers.RegistrationController">
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
+   </padding>
+   <Text id="title-text" text="REGISTRATION FORM" GridPane.columnIndex="0" GridPane.columnSpan="2"
+         GridPane.rowIndex="0"/>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Controller">
-   <top>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label layoutX="201.0" layoutY="20.0" prefHeight="43.0" prefWidth="211.0" text="REGISTRATION FORM">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="184.0" layoutY="108.0" text="Full Name" />
-            <Label layoutX="184.0" layoutY="165.0" text="Email" />
-            <TextField layoutX="184.0" layoutY="129.0" />
-            <TextField layoutX="184.0" layoutY="185.0" />
-            <CheckBox layoutX="433.0" layoutY="155.0" mnemonicParsing="false" text="Teacher" />
-            <CheckBox layoutX="433.0" layoutY="192.0" mnemonicParsing="false" text="Student" />
-         </children>
-      </AnchorPane>
-   </top>
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-   </center>
-   <bottom>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label layoutX="181.0" layoutY="4.0" text="Username" />
-            <Label layoutX="183.0" layoutY="61.0" text="Password" />
-            <TextField layoutX="183.0" layoutY="25.0" />
-            <PasswordField layoutX="183.0" layoutY="82.0" />
-            <Button layoutX="268.0" layoutY="130.0" mnemonicParsing="false" onAction="#changeSignIn" text="Sign in" />
-         </children>
-      </AnchorPane>
-   </bottom>
-</BorderPane>
+   <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+   <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+   <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+   <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+   <Label text="Role:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+
+   <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+   </ChoiceBox>
+
+   <Text fx:id="registrationMessage" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+   <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
+      <Button onAction="#handleRegisterAction" text="Register"/>
+   </HBox>
+</GridPane>
