@@ -1,14 +1,17 @@
 package services;
 
 import org.dizitart.no2.Nitrite;
+import org.dizitart.no2.objects.Cursor;
 import org.dizitart.no2.objects.ObjectRepository;
 import exceptions.UsernameAlreadyExists;
 import model.User;
+import org.dizitart.no2.objects.filters.ObjectFilters;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
+import exceptions.InvalidC;
 
 import static services.FileSystemService.getPathToFile;
 
@@ -28,6 +31,17 @@ public class UserService {
         checkUserDoesNotAlreadyExist(username);
         userRepository.insert(new User(username, encodePassword(username, password), role));
     }
+    public static User getUser(String username) throws InvalidC {
+        Cursor<User> cursor = userRepository.find(ObjectFilters.eq("username", username));
+        for(User u : cursor){
+            return u;
+        }
+        throw new InvalidC(username);
+    }
+
+    public static String getHashedUserPassword(String username) throws InvalidC{
+        return getUser(username).getPassword();
+    }
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExists {
         for (User user : userRepository.find()) {
@@ -36,7 +50,7 @@ public class UserService {
         }
     }
 
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 

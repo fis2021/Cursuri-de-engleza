@@ -57,4 +57,13 @@ public class User {
         result = 31 * result + (role != null ? role.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "UserDTO{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
 }
