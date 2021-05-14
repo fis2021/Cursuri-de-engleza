@@ -43,7 +43,14 @@ public class Login {
         try{
             String stored_password = UserService.getHashedUserPassword(username);
             if(stored_password.equals(encoded_password)){
-                loadHomePage();
+                if(UserService.getUser(username).getRole().equals("Teacher")){
+                    loadTeacherHomePage();
+                    return;
+                }
+                if(UserService.getUser(username).getRole().equals("Student")){
+                    //loadStudentHomePage();
+                    return;
+                }
                 return;
             }
 
@@ -69,14 +76,13 @@ public class Login {
     }
 
     @FXML
-    private void loadHomePage(){
+    private void loadTeacherHomePage(){
         try{
             User u = UserService.getUser(usernameField.getText());
             Stage stage = (Stage) loginMessage.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/javafx/TeacherHomePage.fxml"));
             Parent homeRoot = loader.load();
             Scene scene = new Scene(homeRoot, 640, 480);
-            stage.setTitle("English Courses");
             stage.setScene(scene);
         } catch (InvalidC e){
             loginMessage.setText(e.getMessage());
