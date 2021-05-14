@@ -48,7 +48,7 @@ public class Login {
                     return;
                 }
                 if(UserService.getUser(username).getRole().equals("Student")){
-                    //loadStudentHomePage();
+                    loadStudentHomePage();
                     return;
                 }
                 return;
@@ -91,4 +91,20 @@ public class Login {
             e.printStackTrace();
         }
     }
+    @FXML
+    private void loadStudentHomePage(){
+        try{
+            User u = UserService.getUser(usernameField.getText());
+            Stage stage = (Stage) loginMessage.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/javafx/StudentHomePage.fxml"));
+            Parent homeRoot = loader.load();
+            Scene scene = new Scene(homeRoot, 640, 480);
+            stage.setScene(scene);
+        } catch (InvalidC e){
+            loginMessage.setText(e.getMessage());
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
 }
