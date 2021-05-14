@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <ToolBar prefHeight="45.0" prefWidth="600.0">
-              <items>
-                <Button mnemonicParsing="false" text="Home Page" />
-              </items>
-            </ToolBar>
-            <Hyperlink layoutX="13.0" layoutY="59.0" text="Enrolled Students" />
-            <Separator layoutX="8.0" layoutY="80.0" prefHeight="9.0" prefWidth="581.0" />
-            <Hyperlink layoutX="14.0" layoutY="102.0" text="Lessons" />
-            <Separator layoutX="14.0" layoutY="128.0" prefHeight="0.0" prefWidth="575.0" />
-         </children>
-      </AnchorPane>
-   </top>
-   <bottom>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <ToolBar layoutY="155.0" prefHeight="45.0" prefWidth="600.0">
-              <items>
-                <Button mnemonicParsing="false" text="Log out" />
-              </items>
-            </ToolBar>
-         </children>
-      </AnchorPane>
-   </bottom>
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-   </center>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TeacherHomePage">
+    <top>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ToolBar prefHeight="45.0" prefWidth="600.0">
+                    <items>
+                        <Button mnemonicParsing="false" text="Home Page" />
+                    </items>
+                </ToolBar>
+                <Hyperlink layoutX="13.0" layoutY="59.0" text="Enrolled Students" />
+                <Separator layoutX="8.0" layoutY="80.0" prefHeight="9.0" prefWidth="581.0" />
+                <Hyperlink layoutX="14.0" layoutY="102.0" text="Lessons" />
+                <Separator layoutX="14.0" layoutY="128.0" prefHeight="0.0" prefWidth="575.0" />
+            </children>
+        </AnchorPane>
+    </top>
+    <bottom>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ToolBar layoutY="155.0" prefHeight="45.0" prefWidth="600.0">
+                    <items>
+                        <Button mnemonicParsing="false" onAction="#logoutButtonTeacher" text="Log out" />
+                    </items>
+                </ToolBar>
+            </children>
+        </AnchorPane>
+    </bottom>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+    </center>
 </BorderPane>

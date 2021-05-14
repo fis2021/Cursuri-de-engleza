@@ -83,6 +83,7 @@ public class Login {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/javafx/TeacherHomePage.fxml"));
             Parent homeRoot = loader.load();
             Scene scene = new Scene(homeRoot, 640, 480);
+            //stage.setTitle("English Courses");
             stage.setScene(scene);
         } catch (InvalidC e){
             loginMessage.setText(e.getMessage());
