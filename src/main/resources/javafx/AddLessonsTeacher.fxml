@@ -4,14 +4,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddLessonsTeacherController">
     <top>
         <MenuBar>
             <menus>
                 <Menu text="File">
                     <items>
-                        <MenuItem text="Open" />
-                        <MenuItem text="Save" />
+                        <MenuItem onAction="#openFile" text="Open" />
+                        <MenuItem onAction="#saveFile" text="Save" />
                         <MenuItem text="Close" />
                     </items>
                 </Menu>
@@ -22,12 +22,12 @@
         <AnchorPane>
             <children>
                 <TextArea fx:id="textArea" prefHeight="189.0" prefWidth="600.0" AnchorPane.bottomAnchor="216.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
-                <Button fx:id="loadChangesButton" layoutX="472.0" layoutY="210.0"  text="Load Changes" />
+                <Button fx:id="loadChangesButton" layoutX="472.0" layoutY="210.0" onAction="#loadChanges" text="Load Changes" />
                 <Label fx:id="statusMessage" layoutX="5.0" layoutY="215.0" prefHeight="21.0" prefWidth="176.0" text="Checking for Changes..." />
                 <ProgressBar fx:id="progressBar" layoutX="168.0" layoutY="214.0" prefWidth="150.0" progress="0.0" />
                 <ToolBar layoutY="410.0" prefHeight="45.0" prefWidth="610.0">
                     <items>
-                        <Button mnemonicParsing="false" text="Back" />
+                        <Button mnemonicParsing="false" onAction="#backButtonTeacher" text="Back" />
                     </items>
                 </ToolBar>
             </children>
