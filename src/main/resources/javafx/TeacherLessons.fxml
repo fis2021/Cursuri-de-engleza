@@ -13,7 +13,7 @@
                     </items>
                 </ToolBar>
                 <Hyperlink layoutX="94.0" layoutY="173.0" text="My lessons" />
-                <Hyperlink layoutX="411.0" layoutY="173.0" text="Add lessons" />
+                <Hyperlink layoutX="411.0" layoutY="173.0" onAction="#addLessonButton" text="Add lessons" />
                 <Separator layoutX="303.0" layoutY="45.0" orientation="VERTICAL" prefHeight="315.0" prefWidth="0.0" />
             </children>
         </AnchorPane>

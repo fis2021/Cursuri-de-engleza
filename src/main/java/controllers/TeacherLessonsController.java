@@ -25,6 +25,16 @@ public class TeacherLessonsController implements Initializable {
         parent3_stage.show();
     }
 
+    //Add Button -> AddLessonsTeacher.fxml
+    public void addLessonButton(ActionEvent event) throws IOException {
+        Parent parent6 = load(getClass().getResource("/javafx/AddLessonsTeacher.fxml"));
+
+        Scene parent6_scene = new Scene(parent6);
+        Stage parent6_stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        parent6_stage.setScene(parent6_scene);
+        parent6_stage.show();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
