@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" >
+    <top>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ToolBar prefHeight="45.0" prefWidth="600.0">
+                    <items>
+                        <Button mnemonicParsing="false" text="Enrolled Students" />
+                    </items>
+                </ToolBar>
+                <TableView fx:id="tableview" layoutY="45.0" prefHeight="232.0" prefWidth="397.0">
+                    <columns>
+                        <TableColumn fx:id="colFirstName" prefWidth="199.0" text="First Name" />
+                        <TableColumn fx:id="colLastName" prefWidth="197.0" text="Last Name" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </top>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+    </center>
+    <bottom>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ToolBar layoutY="155.0" prefHeight="45.0" prefWidth="600.0">
+                    <items>
+                        <Button mnemonicParsing="false" text="Back" />
+                    </items>
+                </ToolBar>
+                <Button layoutX="400.0" layoutY="85.0" mnemonicParsing="false" text="Add" />
+                <TextField fx:id="textfieldFname" layoutX="9.0" layoutY="85.0" prefHeight="31.0" prefWidth="185.0" promptText="First Name" />
+                <TextField fx:id="textfieldLname" layoutX="208.0" layoutY="85.0" prefHeight="31.0" prefWidth="185.0" promptText="Last Name" />
+            </children>
+        </AnchorPane>
+    </bottom>
+</BorderPane>

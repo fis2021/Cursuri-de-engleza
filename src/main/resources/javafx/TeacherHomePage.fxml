@@ -12,7 +12,7 @@
                         <Button mnemonicParsing="false" text="Home Page" />
                     </items>
                 </ToolBar>
-                <Hyperlink layoutX="13.0" layoutY="59.0" text="Enrolled Students" />
+                <Hyperlink layoutX="13.0" layoutY="59.0" onAction="#studentsButton" text="Enrolled Students" />
                 <Separator layoutX="8.0" layoutY="80.0" prefHeight="9.0" prefWidth="581.0" />
                 <Hyperlink layoutX="14.0" layoutY="102.0" onAction="#lessonsButton" text="Lessons" />
                 <Separator layoutX="14.0" layoutY="128.0" prefHeight="0.0" prefWidth="575.0" />
