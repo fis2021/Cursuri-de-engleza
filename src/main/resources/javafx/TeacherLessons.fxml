@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ToolBar prefHeight="45.0" prefWidth="600.0">
+                    <items>
+                        <Button mnemonicParsing="false" text="Lessons" />
+                    </items>
+                </ToolBar>
+                <Hyperlink layoutX="94.0" layoutY="173.0" text="My lessons" />
+                <Hyperlink layoutX="411.0" layoutY="173.0" text="Add lessons" />
+                <Separator layoutX="303.0" layoutY="45.0" orientation="VERTICAL" prefHeight="315.0" prefWidth="0.0" />
+            </children>
+        </AnchorPane>
+    </top>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+    </center>
+    <bottom>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ToolBar layoutY="155.0" prefHeight="45.0" prefWidth="600.0">
+                    <items>
+                        <Button mnemonicParsing="false" text="Back" />
+                    </items>
+                </ToolBar>
+            </children>
+        </AnchorPane>
+    </bottom>
+</BorderPane>

@@ -24,6 +24,16 @@ public class TeacherHomePage implements Initializable {
         parent1_stage.show();
     }
 
+    //Lessons hyperlink -> TeacherLessons.fxml
+    public void lessonsButton(ActionEvent event) throws IOException{
+        Parent parent4 = FXMLLoader.load(getClass().getResource("/javafx/TeacherLessons.fxml"));
+
+        Scene parent4_scene = new Scene(parent4);
+        Stage parent4_stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        parent4_stage.setScene(parent4_scene);
+        parent4_stage.show();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
